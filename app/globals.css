@@ -1,21 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #211F26;
+
+  --card-background: #ffffff;
+  --card-border: #EAE7EC;
+
+  --chip-background: rgba(48, 0, 64, 0.06);
+  --chip-border: rgba(32, 0, 54, 0.09);
+
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000;
+    --foreground: #fff;
+
+    --card-background: #1A191B;
+    --card-border: #2B292D;
+
+    --chip-background: rgba(235, 234, 248, 0.08);
+    --chip-border: rgba(238, 229, 248, 0.11);
   }
 }
 
@@ -23,4 +37,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-chip {
+  background: var(--chip-background)
+}
+
+.chip-bordered {
+  border: 1px solid var(--chip-border);
+}
+
+.card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
 }
