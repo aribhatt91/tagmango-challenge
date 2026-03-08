@@ -12,7 +12,7 @@ const Banner = () => (
         bg-size-[100%]
         bg-no-repeat
     `}>
-        <span className='text-sm font-semibold text-(--confetti-text)'>Your Submission</span>
+        <h3 className='inline text-sm font-semibold text-(--confetti-text)'>Your Submission</h3>
     </div>
 )
 function UserSubmission({post}: {post: Post}) {

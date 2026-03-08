@@ -8,7 +8,7 @@ function Avatar({
     className 
 }: {src: string, alt: string, className?: string, width?: number, height?: number}) {
   return (
-    <div className={`inline-flex rounded-full relative justify-center chip items-center ${className || ''}`}>
+    <div aria-label={alt} className={`inline-flex rounded-full relative justify-center chip items-center ${className || ''}`}>
         {!!src && <Image src={src} alt={alt} width={width} height={height} />}
     </div>
   )

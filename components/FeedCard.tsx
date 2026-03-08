@@ -51,7 +51,7 @@ const ListItem = ({text, index}: {text: string, index: number }) => {
 
 const FeedCardBody = ({ content }: {content: any[]}) => {
     //console.log(content);
-    return <div className={`w-full flex flex-col pt-3 lg:pt-4 border-b surface-border`}>
+    return <div className={`w-full flex flex-col border-b surface-border`}>
         {
             content.map((node: any, index: number) => {
                 if(node.type === 'text'){
@@ -89,8 +89,8 @@ const FeedCardFooter = ({ reactions, comments }: {
                 <span><Image alt="smiley" src={'/images/smiley.png'} width={16} height={16}/></span>
                 <span className='text-sm lg:text-base'>{reactions?.totalCount}</span>
             </Chip>
-            <ButtonIcon size='sm' icon={<Smiley/>} bordered={false} />
-            <ButtonIcon size='sm' icon={<ChatCircle/>} bordered={false} />
+            <ButtonIcon size='sm' icon={<Smiley/>} bordered={true} />
+            <ButtonIcon size='sm' icon={<ChatCircle/>} bordered={true} />
         </div>
         <span className='text-sm'>{`${comments || 0} comment${comments === 1 ? '' : 's' }`}</span>
     </div>

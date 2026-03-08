@@ -18,7 +18,7 @@ function ChallengePageHeader({ page, className }: {page: number, className?: str
                 <LeftArrow />
                 <span className="hidden lg:inline text-base leading-6 font-semibold">Back</span>
             </Link>
-            <span className="separator hidden lg:inline w-px h-8"></span>
+            <span className="separator bg-(--separator) hidden lg:inline w-px h-8"></span>
             <span className="hidden lg:inline text-lg leading-6.5 font-semibold">
                 {`Day ${page} of 9`}
             </span>

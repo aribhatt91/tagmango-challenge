@@ -20,6 +20,8 @@
   --confetti-text: #218358;
 
   --muted: rgba(4, 0, 17, 0.61);
+
+  --separator: rgba(20, 0, 53, 0.15);
 }
 @media screen and (max-width: 768px) {
   :root {
@@ -54,6 +56,7 @@
     --confetti-text: #3DD68C;
 
     --muted: rgba(245, 241, 255, 0.72);
+    --separator: #F1E6FD30;
   }
 /* } */
 
@@ -87,9 +90,6 @@ body {
   border-color: var(--surface-border);;
 }
 
-.separator {
-  background-color: #14003527;
-}
 .muted {
   color: var(--text-muted-color);
 }
