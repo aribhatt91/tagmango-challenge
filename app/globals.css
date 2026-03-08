@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
+  --background: #EEEEF0;
   --foreground: #211F26;
 
-  --card-background: #ffffff;
-  --card-border: #EAE7EC;
+  --surface: #ffffff;
+  --surface-border: #EAE7EC;
 
   --chip-background: rgba(48, 0, 64, 0.06);
   --chip-border: rgba(32, 0, 54, 0.09);
 
-}
+  --sidenav-width: 256px;
+  --text-muted-color: rgba(4, 0, 17, 0.61);
 
+  --sidenav-grad-from: rgba(253, 252, 253, 0.3);
+  --sidenav-grad-to: rgba(247, 246, 252, .8);
+
+  --confetti:#E6F6EB;
+  --confetti-text: #218358;
+
+  --muted: rgba(4, 0, 17, 0.61);
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --background: #ffffff;
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -20,34 +34,83 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/* @media (prefers-color-scheme: dark) { */
+  [data-theme="dark"] {
     --background: #000;
     --foreground: #fff;
 
-    --card-background: #1A191B;
-    --card-border: #2B292D;
+    --surface: #1A191B;
+    --surface-border: #2B292D;
 
     --chip-background: rgba(235, 234, 248, 0.08);
     --chip-border: rgba(238, 229, 248, 0.11);
+
+    --text-muted-color: rgba(245, 241, 255, 0.72);
+
+    --sidenav-grad-from: rgba(18, 17, 19, 0.3);
+    --sidenav-grad-to: rgba(3, 3, 3, .8);
+
+    --confetti: #132D21;
+    --confetti-text: #3DD68C;
+
+    --muted: rgba(245, 241, 255, 0.72);
   }
-}
+/* } */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-be-vietnam-pro), Arial, Helvetica, sans-serif;
 }
 
-.bg-chip {
+.chip {
   background: var(--chip-background)
 }
 
 .chip-bordered {
-  border: 1px solid var(--chip-border);
+  border-color: var(--chip-border);
 }
 
-.card {
-  background: var(--card-background);
-  border: 1px solid var(--card-border);
+.bg-surface {
+  background: var(--surface);
+}
+
+.border-surface {
+  border-color: var(--surface-border);
+}
+
+.surface {
+  background: var(--surface);
+}
+
+.surface-border {
+  border-color: var(--surface-border);;
+}
+
+.separator {
+  background-color: #14003527;
+}
+.muted {
+  color: var(--text-muted-color);
+}
+
+.sidenav--desktop .overlay {
+  background: linear-gradient(to right, var(--sidenav-grad-from), var(--sidenav-grad-to)); 
+}
+
+.sidenav--desktop .overlay-top {
+  background: linear-gradient(180deg, var(--surface), transparent);
+}
+
+.mobile-overlay .overlay {
+  background: linear-gradient(180deg, var(--sidenav-grad-from), var(--sidenav-grad-to)); 
+}
+
+.mobilenav .active-tab {
+  --r: .8em; /* control the curvature */
+  border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
+  mask: 
+    radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
+      calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
+    conic-gradient(#000 0 0) padding-box;
 }

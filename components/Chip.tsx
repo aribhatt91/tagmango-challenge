@@ -1,7 +1,9 @@
 
-function Chip({ children, className }: {className?: string, children: React.ReactNode}) {
+function Chip({ children, className, bordered = false }: {className?: string, children?: React.ReactNode, bordered?: boolean}) {
   return (
-    <div className="inline-flex rounded-4xl md:h-8 bg-element-foreground">Chip</div>
+    <div className={`chip ${bordered ? 'border chip-bordered' : ''} inline-flex justify-center items-center rounded-4xl h-8 ${className}`}>
+      {children}
+    </div>
   )
 }
 

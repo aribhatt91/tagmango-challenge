@@ -1,0 +1,39 @@
+{
+    "postId": "544657886868797979",
+    "createdAt": "1s",
+    "author": {
+        "authorId": "user-001",
+        "authorName": "Ashraf Idrishi",
+        "avatar": "/images/main-user.png"
+    },
+    "content": [
+        {
+            "type": "text",
+            "text": "Today’s challenge workout completed—feeling stronger already"
+        },
+        {
+            "type": "media",
+            "media": {
+                "mediaId": "media-001",
+                "mediaType": "video",
+                "mediaUri": "https://video.com/media-001",
+                "thumbnail": "/images/media-001.png",
+                "metadata": {
+                    "aspectRatio": 2.08
+                }
+            }
+        }
+    ],
+    "reactions": {
+        "totalCount": 18,
+        "topAggregate": [{
+            "type": "love",
+            "count": 8
+        },
+        {
+            "type": "hifi",
+            "count": 8
+        }]
+    },
+    "comments": 10
+}

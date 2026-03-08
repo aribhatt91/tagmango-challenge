@@ -12,13 +12,17 @@ export interface Media {
     mediaUri: string, // Links to video/image
     thumbnail?: string,
     metadata?: {
+        label?: string;
         aspectRatio?: number;
     }
 }
 
-export interface Reaction {
-    type: 'love' | 'hifi' | 'angry' | 'like' | 'dislike'
-    userId: string
+export interface Reactions {
+    totalCount: number;
+    topAggregate?: {
+        type: 'love' | 'hifi' | 'angry' | 'like' | 'dislike';
+        count: number;
+    }[];
 }
 
 export interface Author {
@@ -30,11 +34,23 @@ export interface Author {
 export interface Post {
     postId: string;
     createdAt: string;
+    isPinned?: boolean;
     author: Author;
     content: {
-        text: string;
-        media: Media | null
-    };
-    reactions?: Reaction[];
-    comments: number;
+        type: "text" | "list" | "media";
+        text?: string;
+        media?: Media;
+        list?: string[]
+    }[];
+    reactions?: Reactions;
+    comments?: number;
+}
+
+export interface Feed {
+    participants: number;
+    topParticipants?: {
+        userId: string;
+        avatar?: string
+    }[]
+    posts: Post[];
 }

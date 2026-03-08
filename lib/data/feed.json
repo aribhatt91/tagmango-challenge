@@ -1,0 +1,47 @@
+{
+    "participants": 85,
+    "topParticipants": [{
+        "userId": "user-003",
+        "avatar": "/images/user-003.png"
+    },
+    {
+        "userId": "user-004",
+        "avatar": "/images/user-004.png"
+    },
+    {
+        "userId": "user-005",
+        "avatar": "/images/user-005.png"
+    }],
+    "posts": [
+        {
+            "isPinned": true,
+            "postId": "767668697979",
+            "createdAt": "3hrs ago",
+            "author": {
+                "authorId": "user-002",
+                "authorName": "Russell Brunson",
+                "avatar": "/images/user-002.png"
+            },
+            "content": [{
+                "type": "text",
+                "text": "This 9-day fitness challenge is designed to help you build consistency, boost energy, and feel stronger—one day at a time. Each day comes with a simple, achievable fitness task that fits easily into your routine, no matter your current fitness level."
+            },
+            {
+                "type": "list",
+                "list": ["Minimum 20 minutes of sit-up", "Mention Intensity", "Upload Media (Optional)"]
+            }],
+            "reactions": {
+                "totalCount": 18,
+                "topAggregate": [{
+                    "type": "love",
+                    "count": 8
+                },
+                {
+                    "type": "hifi",
+                    "count": 8
+                }]
+            },
+            "comments": 10
+        }
+    ]
+}
