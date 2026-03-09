@@ -10,7 +10,7 @@ export default function Home() {
      
       <BodyWrapper>
         <div className="z-10 w-full fixed">
-           <div className='lg:hidden fixed top-0 left-0 h-34 w-full'>
+           <div className='lg:hidden fixed -top-px left-0 h-34 w-full'>
               <div className="mobile-overlay absolute w-full h-full rounded-b-3xl outline-none bg-[url('/images/sidenav-bg-mobile.png')] border-transparent overflow-hidden">
                   <div className="overlay w-full h-full backdrop-blur-[50px]"></div>
               </div>
@@ -19,7 +19,7 @@ export default function Home() {
           <ChallengePageHeader page={1}/>
           <SideNav/>
         </div>
-        <Main/>
+        <Main/> 
       </BodyWrapper>
       
     </div>

@@ -28,7 +28,7 @@ function MobileNav({navs}: {navs: any[]}) {
     const minWidth = (56 + 8) * navs.length - 8; 
     return (
         <aside className='mobilenav bg-transparent lg:hidden fixed top-14 z-10 h-20 pt-2 w-full overflow-hidden'>
-            <span className='active-tab-indicator w-14 h-18 rounded-t-full -bottom-px left-[50%] -ml-7 bg-background absolute'>
+            <span className='active-tab-indicator w-14 h-18 rounded-t-full bottom-0 left-[50%] -ml-7 bg-background absolute'>
                 <span className='inline-block relative w-full h-full'></span>
             </span>
             <div role='navigation' className={`relative w-auto h-17 mb-2 flex items-center flex-nowrap gap-2`} 
