@@ -23,7 +23,7 @@ const NAVS: SideNavType[] = (new Array(9)).fill(0).map((o,i)=>({
 const SideNavItem = ({ nav }: { nav: SideNavType }) => {
     if(nav.unlocked && !nav.selected) {
         return (
-            <Link role='list-item' href={nav.path} 
+            <Link  href={nav.path} 
                 className='sidenav__item h-12 w-full px-4 py-3 text-base font-semibold'>
                 <div className='flex justify-between items-center'>
                     <span>{nav.label}</span>
@@ -36,9 +36,11 @@ const SideNavItem = ({ nav }: { nav: SideNavType }) => {
         <div role='list-item' 
         className={`sidenav__item relative h-12 w-full px-4 py-3 text-base font-semibold ${!nav.unlocked ? 'muted' : ''}`}>
             {
-                nav.selected && <div className='sidenav--item__overlay rounded-l-full w-full absolute h-14 -top-1 -right-px bg-background'></div>
+                nav.selected && <div className='active-tab-indicator rounded-l-full w-full absolute h-14 -top-1 -right-px bg-background'>
+                    <div className='relative w-full h-full'></div>
+                </div>
             }
-            <div className='flex w-full h-full justify-between items-center relative'>
+            <div aria-disabled={!nav.unlocked} className='flex w-full h-full justify-between items-center relative'>
                 <span className={`${!nav.selected ? 'font-medium': 'font-semibold'}`}>{nav.label}</span>
                 <span>{nav.unlocked ? <CheckCircle /> : <Lock/> }</span>
             </div>
@@ -61,7 +63,7 @@ function SideNav() {
         }
     }, [user, pathname]);
 
-    console.log(pathname, navs);
+    //console.log(pathname, navs);
 
     return (
         <>
@@ -69,7 +71,7 @@ function SideNav() {
                 <div className="overlay w-full h-full absolute top-0 l-0 backdrop-blur-[50px]"></div>
                 <div className='overlay-top w-full h-14 absolute -top-px l-0 opacity-90'></div>
                 <div className='w-full h-full pt-4 pb-6 pl-2 pr-0'>
-                    <div className='w-full h-full pt-12 flex flex-col gap-3' role='list'>
+                    <div className='w-full h-full pt-12 flex flex-col gap-3' role='navigation'>
                         {
                             navs.map((nav: SideNavType) => (<SideNavItem key={nav.label} nav={nav} />))
                         }

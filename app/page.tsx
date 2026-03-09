@@ -19,7 +19,6 @@ export default function Home() {
           <ChallengePageHeader page={1}/>
           <SideNav/>
         </div>
-        
         <Main/>
       </BodyWrapper>
       

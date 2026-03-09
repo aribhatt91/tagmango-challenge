@@ -114,3 +114,43 @@ body {
       calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
 }
+
+.sidenav .active-tab-indicator > div::after,
+.sidenav .active-tab-indicator > div::before {
+  position: absolute;
+  content: '';
+  height: 24px;
+  width: 24px;
+  right: 0;
+  mask-composite: exclude;
+  display: inline-block;
+  background-color: var(--background);
+}
+.sidenav .active-tab-indicator > div::before {
+  top: -24px;
+  mask: radial-gradient(circle 24px at 0 0, transparent 100%, var(--background));
+}
+.sidenav .active-tab-indicator > div::after {
+  bottom: -24px;
+  mask: radial-gradient(circle 24px at 0 100%, transparent 100%, var(--background));
+}
+
+.mobilenav .active-tab-indicator > span::after,
+.mobilenav .active-tab-indicator > span::before {
+  position: absolute;
+  content: '';
+  height: 24px;
+  width: 24px;
+  bottom: 0;
+  mask-composite: exclude;
+  display: inline-block;
+  background-color: var(--background);
+}
+.mobilenav .active-tab-indicator > span::before {
+  left: -24px;
+  mask: radial-gradient(circle 24px at 0 0, transparent 100%, var(--background));
+}
+.mobilenav .active-tab-indicator > span::after {
+  right: -24px;
+  mask: radial-gradient(circle 24px at 100% 0, transparent 100%, var(--background));
+}
